@@ -1,0 +1,19 @@
+.wrapper {
+  margin-top: 5px;
+}
+
+.delete {
+  text-decoration: line-through;
+}
+.js--delete-item {
+  margin-left: 10px;
+}
+li {
+  padding: 10px;
+}
+form{
+    text-align: right;
+}
+.submit{
+    margin-top: 5px;
+}
