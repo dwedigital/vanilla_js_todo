@@ -14,16 +14,19 @@
       </nav>
     <div class='container wrapper'>
         <form>
-        <label>Add To Do:</label><input type='text' class="form-control" placeholder="Enter a To Do item"></input>
+        <span class="entry"><input type='text' class="form-control" placeholder="Enter a To Do item"></input></span>
         <button type='submit' class="btn btn-primary submit">Add To Do</button>
         </form>
-        <ul>
-          <li>one<button class="js--delete-item btn btn-link">Delete</button></li>
-          <li>two<button class="js--delete-item btn btn-link">Delete</button></li>
-          <li>three<button class="js--delete-item btn btn-link">Delete</button></li>
-          <li>four<button class="js--delete-item btn btn-link">Delete</button></li>
-          <li>five<button class="js--delete-item btn btn-link">Delete</button></li>
-        </ul>
+        <div class="to-do">
+          <h1>To Do List</h1>
+          <ul>
+            <li><span>one</span><button class="js--delete-item btn btn-link">Delete</button></li>
+            <li><span>two</span><button class="js--delete-item btn btn-link">Delete</button></li>
+            <li><span>three</span><button class="js--delete-item btn btn-link">Delete</button></li>
+            <li><span>four</span><button class="js--delete-item btn btn-link">Delete</button></li>
+            <li><span>five</span><button class="js--delete-item btn btn-link">Delete</button></li>
+          </ul>
+        </div>
         </div>
         <script src="main.js"></script>
 </body>

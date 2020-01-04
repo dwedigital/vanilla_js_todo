@@ -8,32 +8,33 @@ function addEntry() {
   if (userInput.value.length === 0) {
     return;
   } else {
+
+    // list item
     const item = document.createElement("li");
-    item.appendChild(document.createTextNode(userInput.value));
+    const span = document.createElement('span')
+    item.appendChild(span);
+    span.appendChild(document.createTextNode(userInput.value))
     list.appendChild(item);
 
+    // create button
     const button = document.createElement("button");
     button.setAttribute("class", "js--delete-item btn btn-link");
     button.innerHTML = "Delete";
     item.appendChild(button);
-    userInput.value = "";
 
-    button.addEventListener("click", () => {
-      var parent = event.target.parentNode;
-      parent.classList.toggle("delete");
-      buttonText(button);
-    });
+    // add event listener to button and clear form field
+    button.addEventListener("click",Delete);
+    userInput.value = "";
   }
 }
 
-function addDelete() {
-  document.querySelectorAll(".js--delete-item").forEach(item => {
-    item.addEventListener("click", event => {
+function Delete() {
       const parent = event.target.parentNode;
-      parent.classList.toggle("delete");
-      buttonText(item);
-    });
-  });
+      parent.classList.toggle("deleted_item")
+      const text = parent.querySelector('span')
+      text.classList.toggle("deleted_text");
+      buttonText(this);
+
 }
 
 function buttonText(button) {
@@ -44,5 +45,6 @@ function buttonText(button) {
   }
 }
 
-addDelete();
+document.querySelectorAll(".js--delete-item").forEach(item => item.addEventListener("click", Delete))
+
 submit.addEventListener("click", addEntry);
